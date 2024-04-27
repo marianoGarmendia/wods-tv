@@ -4,20 +4,20 @@ import cors from "cors";
 import { wodRouter } from "./routes/wod.route.js";
 // import { createRequire } from "module";
 import process from "process";
-import { PORT, DATABASE_URL } from "./config.js";
+import { DATABASE_URL, CREDENTIALS, FIREBASE_CONFIG } from "./config.js";
+const port = process.env.PORT || 3000;
 
 const app = express();
-// const require = createRequire(import.meta.url);
-// var serviceAccount = require("./Key.json");
+// const require = createRequire(import.meta.url);// var serviceAccount = require("./Key.json");
 
 import { initializeApp } from "firebase/app";
 
 admin.initializeApp({
-  credential: admin.credential.cert(process.env.CREDENTIALS),
+  credential: admin.credential.cert(CREDENTIALS),
   databaseURL: DATABASE_URL,
 });
 
-initializeApp(process.env.FIREBASE_CONFIG);
+initializeApp(FIREBASE_CONFIG);
 
 // const storage = getStorage();
 // const storageRef = ref(
@@ -50,8 +50,8 @@ app.use(express.json());
 app.use(express.text());
 app.use(wodRouter);
 
-app.listen(PORT, () => {
-  console.log(`Servidor en el puerto ${PORT}`);
+app.listen(port, () => {
+  console.log(`Servidor en el puerto ${port}`);
 });
 
 // console.log(process.env.DB_USER);
