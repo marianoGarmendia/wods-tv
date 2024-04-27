@@ -13,7 +13,7 @@ const app = express();
 import { initializeApp } from "firebase/app";
 
 admin.initializeApp({
-  credential: admin.credential.cert(process.env.credentials),
+  credential: admin.credential.cert(process.env.CREDENTIALS),
   databaseURL: process.env.DATABASE_URL,
 });
 
