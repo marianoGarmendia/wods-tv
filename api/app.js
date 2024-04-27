@@ -4,7 +4,7 @@ import cors from "cors";
 import { wodRouter } from "./routes/wod.route.js";
 // import { createRequire } from "module";
 import process from "process";
-import { DATABASE_URL, CREDENTIALS, FIREBASE_CONFIG } from "./config.js";
+import { DATABASE_URL, FIREBASE_CONFIG } from "./config.js";
 const port = process.env.PORT || 3000;
 
 const app = express();
@@ -13,7 +13,7 @@ const app = express();
 import { initializeApp } from "firebase/app";
 
 admin.initializeApp({
-  credential: admin.credential.cert(CREDENTIALS),
+  credential: admin.credential.cert(process.env.credentials),
   databaseURL: DATABASE_URL,
 });
 
