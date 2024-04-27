@@ -4,8 +4,7 @@ import cors from "cors";
 import { wodRouter } from "./routes/wod.route.js";
 // import { createRequire } from "module";
 import process from "process";
-import { PORT, firebaseConfig, DATABASE_URL } from "./config.js";
-import { KEY } from "./key.js";
+import { PORT, DATABASE_URL } from "./config.js";
 
 const app = express();
 // const require = createRequire(import.meta.url);
@@ -14,11 +13,11 @@ const app = express();
 import { initializeApp } from "firebase/app";
 
 admin.initializeApp({
-  credential: admin.credential.cert(KEY),
+  credential: admin.credential.cert(process.env.CREDENTIALS),
   databaseURL: DATABASE_URL,
 });
 
-initializeApp(firebaseConfig);
+initializeApp(process.env.FIREBASE_CONFIG);
 
 // const storage = getStorage();
 // const storageRef = ref(
