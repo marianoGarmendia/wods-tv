@@ -2,18 +2,19 @@ import express from "express";
 import admin from "firebase-admin";
 import cors from "cors";
 import { wodRouter } from "./routes/wod.route.js";
-import { createRequire } from "module";
+// import { createRequire } from "module";
 import process from "process";
 import { PORT, firebaseConfig, DATABASE_URL } from "./config.js";
+import { KEY } from "./key.js";
 
 const app = express();
-const require = createRequire(import.meta.url);
-var serviceAccount = require("./Key.json");
+// const require = createRequire(import.meta.url);
+// var serviceAccount = require("./Key.json");
 
 import { initializeApp } from "firebase/app";
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert(KEY),
   databaseURL: DATABASE_URL,
 });
 
