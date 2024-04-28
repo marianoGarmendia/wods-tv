@@ -4,6 +4,11 @@ import cors from "cors";
 import { wodRouter } from "./routes/wod.route.js";
 // import { createRequire } from "module";
 import process from "process";
+import dotenv from "dotenv";
+dotenv.config();
+
+// import key from "key.json";
+
 // import { DATABASE_URL, FIREBASE_CONFIG } from "./config.js";
 const port = process.env.PORT || 3000;
 
@@ -12,6 +17,7 @@ const app = express();
 
 import { initializeApp } from "firebase/app";
 
+console.log(process.env.PRIVATE_KEY);
 admin.initializeApp({
   credential: admin.credential.cert({
     type: process.env.TYPE,
@@ -74,5 +80,3 @@ app.listen(port, () => {
 });
 
 // console.log(process.env.DB_USER);
-const dataBase = process.env.dataBase;
-console.log(dataBase);
