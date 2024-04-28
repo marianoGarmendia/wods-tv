@@ -17,7 +17,7 @@ const app = express();
 
 import { initializeApp } from "firebase/app";
 
-console.log(process.env.PRIVATE_KEY);
+// console.log(process.env.PRIVATE_KEY);
 admin.initializeApp({
   credential: admin.credential.cert({
     type: process.env.TYPE,
