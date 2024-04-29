@@ -5,8 +5,8 @@ import CreateWod from "./pages/createWod";
 function App() {
   return (
     <Routes>
-      <Route path="/wod-tv" element={<InitPage />}></Route>
-      <Route path="/wod-tv/create-wod" element={<CreateWod />}></Route>
+      <Route path="/" element={<InitPage />}></Route>
+      <Route path="/create-wod" element={<CreateWod />}></Route>
     </Routes>
   );
 }
