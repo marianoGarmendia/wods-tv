@@ -41,7 +41,7 @@ function InitPage() {
   return (
     <section className="h-screen w-full">
       <header className="w-full h-[10%]  flex items-center justify-center p-2">
-        <img src="wod-tv/src/assets/logo-g10.png" alt="" className="h-[100%]" />
+        <img src="src/img/logo-g10.png" alt="" className="h-[100%]" />
       </header>
       <div
         className="flex tracking-widest  max-h-[10%]"
