@@ -58,7 +58,7 @@ function CreateWod() {
           <option value="crossfit">Crossfit</option>
           <option value="functional">Functional</option>
           <option value="high">High Intensity</option>
-          <option value="Woman">Woman Strong</option>
+          <option value="woman">Woman Strong</option>
           <option value="intense">Intense Functional</option>
           <option value="power">Power Woman</option>
           <option value="full">Full Body</option>
