@@ -87,7 +87,14 @@ function CreateWod() {
       <button className="my-4 font-semibold tracking-wide focus:scale-100 focus:bg-[#eee] focus:text-[#171717] p-2 rounded-md  hover:scale-105 ease-in-out duration-200 cursor-pointer bg-[#212121] m-2 w-2/3">
         Enviar
       </button>
-      {create && <MessageCreate></MessageCreate>}
+      {create ? (
+        <MessageCreate></MessageCreate>
+      ) : (
+        <div>
+          <h1>Creando wod</h1>
+          <p>esperá unos segundos...</p>
+        </div>
+      )}
     </form>
   );
 }
