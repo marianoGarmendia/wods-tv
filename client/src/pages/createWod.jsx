@@ -15,6 +15,7 @@ function CreateWod() {
   } = useForm();
   const [selectedDate, setSelectedDate] = useState(null);
   const [create, setCreate] = useState(false);
+  const [send, setSend] = useState(false);
 
   useEffect(() => {
     if (isSubmitSuccessful) {
@@ -24,6 +25,7 @@ function CreateWod() {
   }, [isSubmitSuccessful, reset, formState]);
 
   const submit = async (values) => {
+    setSend(true);
     values.fecha = selectedDate;
     const response = await fetch(
       `${import.meta.env.VITE_BACKEND_URL}/create-wod`,
@@ -36,7 +38,8 @@ function CreateWod() {
       }
     );
     const send = await response.json();
-    setCreate(send);
+    send && setSend(false) & setCreate(true);
+
     setTimeout(() => {
       setCreate(false);
     }, 2000);
@@ -87,10 +90,9 @@ function CreateWod() {
       <button className="my-4 font-semibold tracking-wide focus:scale-100 focus:bg-[#eee] focus:text-[#171717] p-2 rounded-md  hover:scale-105 ease-in-out duration-200 cursor-pointer bg-[#212121] m-2 w-2/3">
         Enviar
       </button>
-      {create ? (
-        <MessageCreate></MessageCreate>
-      ) : (
-        <div>
+      {create && <MessageCreate></MessageCreate>}
+      {send && (
+        <div className="text-center">
           <h1>Creando wod</h1>
           <p>esperá unos segundos...</p>
         </div>
