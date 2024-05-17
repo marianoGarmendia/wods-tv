@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Workout from "../components/Workout";
+import imgLogo from "../img/logo-g10.png";
 
 function InitPage() {
   const [wods, setWods] = useState([]);
@@ -41,10 +42,10 @@ function InitPage() {
   return (
     <section className="h-screen w-full">
       <header className="w-full h-[10%]  flex items-center justify-center p-2">
-        <img src="src/img/logo-g10.png" alt="" className="h-[100%]" />
+        <img src={imgLogo} alt="" className="h-[100%]" />
       </header>
       <div
-        className="flex tracking-widest  max-h-[10%]"
+        className="flex tracking-widest w-[90%] justify-center min-h-[10%] flex-wrap"
         onClick={(e) => {
           handleWod(e);
         }}
@@ -77,7 +78,7 @@ function InitPage() {
           Functional
         </button>
         <button
-          className="font-semibold tracking-wide focus:scale-100 focus:bg-[#eee] focus:text-[#171717] p-2 rounded-md max-w-fit hover:scale-105 ease-in-out duration-200 cursor-pointer bg-[#212121] m-2"
+          className="font-semibold tracking-wide focus:scale-100 focus:bg-[#eee] focus:text-[#171717] p-2 rounded-md max-w-fit hover:scale-105 ease-in-out duration-200 cursor-pointer bg-[#212121] m-2 h-auto"
           onClick={() => {
             verifyWod("high", getWod);
           }}
@@ -137,7 +138,7 @@ function InitPage() {
             autoPlay
             muted
             loop
-            className="w-full object-cover aspect-video animate-fade"
+            className="w-full object-cover aspect-video animate-fade "
             src={import.meta.env.VITE_PUBLICIDAD_URL}
           >
             Tu navegador no soporta la reproducción de videos.
