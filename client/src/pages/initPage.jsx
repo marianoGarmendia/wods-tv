@@ -45,7 +45,7 @@ function InitPage() {
         <img src={imgLogo} alt="" className="h-[100%]" />
       </header>
       <div
-        className="flex tracking-widest w-[90%] justify-center min-h-[10%] flex-wrap"
+        className="flex tracking-widest w-full justify-center min-h-[10%] flex-wrap"
         onClick={(e) => {
           handleWod(e);
         }}
@@ -114,9 +114,9 @@ function InitPage() {
           Full Body
         </button>
       </div>
-      <main className="h-[80%] flex ">
-        <div className="w-1/2 ">
-          <div className="flex  ">
+      <main className="h-[80%] flex-col flex md:flex-row items-center  md:justify-center w-full ">
+        <div className="w-1/2 md:self-start">
+          <div className="flex   ">
             <h3 className="bg-[#212121] flex-1 flex justify-center items-center text-3xl p-4 mx-2 rounded-md my-6 tracking-wide font-semibold">
               {titleWod}
             </h3>
@@ -133,7 +133,7 @@ function InitPage() {
             )}
           </div>
         </div>
-        <div className="w-1/2 flex items-center ">
+        <div className="w-full md:w-1/2 flex items-center ">
           <video
             autoPlay
             muted

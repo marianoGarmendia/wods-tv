@@ -2,7 +2,7 @@
 function Workout({ wod }) {
   return (
     <article>
-      <pre className=" text-4xl text-[#eee] text-center tracking-wider  font-[Roboto] ">
+      <pre className=" text-3xl text-[#eee] text-center tracking-wider  font-[Roboto] ">
         {wod}
       </pre>
     </article>
