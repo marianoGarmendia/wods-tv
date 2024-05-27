@@ -15,8 +15,11 @@ wodRouter.get("/wod/:id", (req, res) => {
     querySnap.size === 0 && res.send({});
     querySnap.forEach((docSnap) => {
       const dateWod = new Date(docSnap.id);
+
       const dayWod = dateWod.getDate();
-      if (today.getDate() === dayWod) {
+      const monthWod = dateWod.getMonth();
+
+      if (today.getDate() === dayWod && today.getMonth() === monthWod) {
         return res.send(docSnap.data());
       }
       // docSnap.id devuelve la fecha que tiene como id
