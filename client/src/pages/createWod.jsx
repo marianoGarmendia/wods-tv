@@ -19,7 +19,6 @@ function CreateWod() {
 
   useEffect(() => {
     if (isSubmitSuccessful) {
-      console.log("resetando");
       reset();
     }
   }, [isSubmitSuccessful, reset, formState]);
