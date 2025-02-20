@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Workout from "../components/Workout";
-// import imgLogo from "../img/logo-g10.png";
+import imgLogo from "../img/logo-g10.png";
 
 function InitPage() {
   const [wods, setWods] = useState([]);
@@ -42,10 +42,7 @@ function InitPage() {
   return (
     <section className="h-screen w-full">
       <header className="w-full h-[10%]  flex items-center justify-center p-2">
-        {/* <img src={imgLogo} alt="" className="h-[100%]" /> */}
-        <h1 className="font-bold text-5xl">
-          ♾️♾️♾️♾️♾️♾️♾️ H E F D T L M ♾️♾️♾️♾️♾️♾️♾️
-        </h1>
+        <img src={imgLogo} alt="" className="h-[100%]" />
       </header>
       <div
         className="flex tracking-widest w-full justify-center min-h-[10%] flex-wrap"
